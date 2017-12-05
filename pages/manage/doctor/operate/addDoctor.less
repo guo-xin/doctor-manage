@@ -1,0 +1,167 @@
+@import "../../../../assets/style/index.less";
+
+@rowGap: 30px;
+@rowML: 20px;
+@contentM: 4.1666666%;
+@labelW: 114px;
+@marginL: 50px;
+
+.wrapper {
+  overflow-y: auto;
+  height: 100%;
+  max-width: 1200px;
+  margin: auto;
+  background: #fff;
+
+  & > div {
+    margin: 0px @contentM;
+    min-height: 100%;
+    display: flex;
+  }
+  & > div > .panel {
+    margin-top: 15px;
+  }
+  :global {
+    .row {
+      margin: 0 @rowML 0;
+    }
+
+    .col {
+      float: left;
+      width: 50%;
+      min-width: 300px;
+      margin-bottom: 10px;
+    }
+
+    .ant-form-item {
+      & > .ant-form-item-label {
+        display: block;
+        float: left;
+        width: @labelW;
+        text-align: right;
+      }
+
+      .ant-form-item-control {
+        margin-left: @labelW + 1px;
+        margin-right: 30px;
+      }
+
+      .upload {
+        display: none;
+      }
+    }
+  }
+
+  :global .safeBotton {
+    width: 49% !important;
+
+    .ant-btn {
+      width: auto;
+    }
+  }
+}
+
+.panel {
+  composes: panel;
+}
+
+.left {
+  width: 300px;
+  position: absolute;
+  height: 100%;
+  border-right: 1px solid #ececec;
+  .panelTitle {
+    padding: 25px;
+    border-bottom: 1px solid #ececec;
+  }
+  ul {
+    border-bottom: 1px solid #ececec;
+  }
+  li {
+    padding-left: @marginL;
+    line-height: 48px;
+  }
+  li:hover, li.active {
+    background: #fbfbfb;
+  }
+  a {
+    color: @textColor;
+  }
+}
+
+.right {
+  margin-left: 300px;
+}
+
+.panelHead {
+  height: @panelHeadHeight;
+  padding: 50px @marginL 30px;
+  &:not(:first-child) {
+    border-top: 1px solid @borderColorBase;
+    clear: both;
+  }
+}
+
+.panelTitle {
+  composes: panel-title;
+  font-weight: bold;
+
+  span {
+    font-size: @fontSizeSm;
+    color: @textLightGrey;
+    font-weight: normal;
+    margin-left: @gapSm;
+  }
+}
+
+.panelTitle {
+  font-size: @fontSizeBase;
+}
+
+.panelBody {
+  composes: panel-body;
+  padding: 15px 0;
+  .panelTitle {
+    font-weight: bold;
+    padding: 0px @marginL 30px;
+  }
+  .textarea {
+    :global .ant-form-item {
+      width: 90%;
+      .ant-form-item-label {
+        text-align: center;
+      }
+    }
+    :global .ant-form-item-control {
+      margin-left: @marginL - @rowML;
+    }
+    textarea {
+      resize: none;
+    }
+
+  }
+  .wordTip {
+    position: absolute;
+    margin-top: -30px;
+    right: 10px;
+    span {
+      color: #999;
+      font-size: @fontSizeXs;
+    }
+  }
+}
+
+.action {
+  padding: @gapXl;
+  text-align: right;
+
+  :global .ant-btn {
+    width: 100px;
+
+    &:first-child {
+      margin-right: 30px;
+    }
+  }
+}
+
+

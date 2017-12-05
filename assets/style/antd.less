@@ -1,0 +1,121 @@
+@import "./themes/default.less";
+@import "~antd/lib/style/themes/default";
+
+@primary-color: @blue;
+
+@text-color: @textColor;
+@font-size-base: @fontSizeBase;
+
+@border-radius-base: @borderRadius;
+@border-color-base: @borderColorBase;
+
+@link-color: @blue;
+
+@btn-font-weight: 400;
+@btn-font-size-lg: 16px;
+@btn-padding-lg: 7px 15px 7px 15px;
+
+@input-height-lg: 38px;
+
+@import "~antd/lib/style/core/index.less";
+@import "~antd/lib/style/components.less";
+
+@icon-url-overwrite: "../iconfont/iconfont";
+@font-face {
+  font-family: 'anticon';
+  src: url('@{icon-url-overwrite}.eot'); /* IE9*/
+  src: url('@{icon-url-overwrite}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('@{icon-url-overwrite}.woff') format('woff'), /* chrome、firefox */ url('@{icon-url-overwrite}.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('@{icon-url-overwrite}.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+@select-prefix-cls: ant-select;
+
+.@{select-prefix-cls} {
+  &-lg {
+    .ant-select-selection--single {
+      height: @input-height-lg;
+      .ant-select-selection__rendered {
+        line-height: @input-height-lg - 2px;
+      }
+    }
+
+    .ant-select-selection--multiple {
+      min-height: @input-height-lg;
+      .ant-select-selection__rendered {
+        li {
+          height: 24px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+
+}
+
+@form-prefix-cls: ant-form;
+.@{form-prefix-cls}-item {
+  &-control {
+    line-height: 40px;
+  }
+}
+
+@tree-prefix-cls: ant-tree;
+
+.@{tree-prefix-cls} {
+  font-size: @fontSizeBase;
+
+  li span.ant-tree-switcher.ant-tree-roots_open:after,
+  li span.ant-tree-switcher.ant-tree-center_open:after,
+  li span.ant-tree-switcher.ant-tree-bottom_open:after,
+  li span.ant-tree-switcher.ant-tree-noline_open:after {
+    transform: scale(0.5) rotate(0deg);
+  }
+}
+
+.vertical-center-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vertical-center-modal .ant-modal {
+  top: 0;
+}
+
+.ant-table td{
+  font-size: @fontSizeSm;
+}
+
+.ant-table th, .ant-table td{
+  padding: 12px 8px;
+}
+.ant-btn-lg {
+  min-width: 100px;
+}
+.ant-modal .ant-modal-content{
+  width: 540px;
+  border-radius: 8px;
+  .ant-confirm-title{
+    font-size: 18px;
+  }
+  .ant-confirm-content{
+    font-size: 14px;
+  }
+}
+
+.ant-message .anticon{
+  font-size: 24px;
+}
+
+.ant-message-notice-content{
+  border-radius: 8px;
+}
+
+.ant-message-notice-content span{
+  font-size: @fontSizeLg;
+  color: @textColor;
+}
+
+.ant-calendar-range .ant-calendar-input, .ant-calendar-range .ant-time-picker-input{
+  height: 24px;
+  font-size: @fontSizeSm;
+}

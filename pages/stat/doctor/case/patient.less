@@ -1,0 +1,69 @@
+@import "../../../../assets/style/index";
+
+.patientInfo{
+  composes: panel;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+
+
+.panelBody{
+  composes: panel-body;
+  padding: 0 @gapLg @gapLg;
+
+  :global {
+
+    .info {
+      margin-left: @gap;
+    }
+
+    .pic{
+      vertical-align: middle;
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      background: #fff;
+      text-align: center;
+      border-radius: 100%;
+      overflow: hidden;
+      border: 1px solid @borderColorBase;
+
+      img {
+        max-height: 100%;
+      }
+    }
+
+
+
+    .ant-select-selection,
+    .ant-select-arrow {
+      border: 0;
+      font-size: 18px;
+      font-weight: bolder;
+      color: #1ac5f0;;
+    }
+
+    .ant-select-selection__rendered {
+      padding-left: 0;
+      padding-right: 30px;
+    }
+
+    .ant-select-arrow {
+      margin-top: -10px;
+    }
+
+    form {
+      margin-top: @gap;
+    }
+
+    .ant-form-item {
+      margin-right: 30px;
+    }
+
+    .ant-form-item-label{
+      padding: 8px 0;
+      vertical-align: top;
+    }
+  }
+}

@@ -1,0 +1,174 @@
+@import "../../../assets/style/index";
+
+@menuHeight: 56px;
+@contentM: 4.1666666%;
+@lineHeight: 38px;
+
+.wrapper {
+  height: 100%;
+
+  & > div {
+    height: 100%;
+  }
+
+  :global {
+    .assistant {
+      .ant-popover-inner {
+        min-width: 56px;
+      }
+      .ant-popover-inner-content {
+        font-size: @fontSizeXs;
+        padding: 2px;
+      }
+    }
+
+    .anticon-arrow-down, .anticon-arrow-up {
+      transform: rotate(45deg);
+      margin-right: 10px;
+      font-size: 16px;
+    }
+  }
+
+}
+
+.top {
+  padding: 20px 0;
+  text-align: right;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  top: @menuHeight;
+  bottom: 0;
+  overflow-y: auto;
+
+  & > div {
+    margin: 18px @contentM;
+  }
+}
+
+.panelHead {
+  composes: panel-head;
+
+  padding: 28px 36px;
+  background: #fbfbfb;
+  height: auto;
+}
+
+.panelBody {
+  composes: panel-body;
+  padding: 36px 46px @gap;
+}
+
+.search {
+  :global {
+    .ant-form-item {
+      margin: 8px 2% 8px 0;
+
+      .ant-calendar-range-picker.ant-input {
+        width: auto;
+      }
+
+    }
+
+    .ant-btn {
+      border-radius: 4px;
+    }
+
+    .ant-input,
+    .ant-select {
+      width: 240px;
+    }
+  }
+}
+
+:global {
+  .ant-calendar-range {
+    .ant-calendar-ok-btn {
+      height: auto;
+    }
+    .ant-calendar-date-input-wrap .ant-calendar-input {
+      padding-right: 2px;
+    }
+  }
+}
+
+
+//弹出层样式
+.action {
+  padding: 0;
+  text-align: left;
+
+  .labelContent {
+    line-height: @lineHeight;
+  }
+}
+
+.safeModal {
+  :global .ant-modal {
+    .ant-modal-header {
+      border-bottom: none;
+
+      .ant-modal-title {
+        font-size: 18px;
+      }
+    }
+    .ant-modal-body {
+      margin: 0px 80px;
+      padding: 16px 0px;
+      p {
+        color: @textColor;
+        font-size: @fontSizeBase;
+        span{
+          color:@red;
+        }
+      }
+      .col {
+        .ant-form-item > .ant-form-item-label {
+          display: block;
+          float: left;
+          width: 114px;
+          text-align: right;
+        }
+        .ant-form-item-control {
+          margin-left: 115px;
+        }
+      }
+      .ant-form-item-required:before {
+        content: "";
+      }
+
+      .check, .send {
+        display: inline-flex;
+        button {
+          height: 38px;
+          margin-left: 15px;
+          width: 100px;
+          margin-top: 3px;
+          background: #ececec;
+          &:hover {
+            background: #fff;
+            span {
+              color: #48d1f3;
+            }
+          }
+          span {
+            color: #717171;
+            font-size: @fontSizeBase;
+          }
+        }
+
+      }
+
+    }
+    .ant-modal-footer {
+      border-top: none;
+    }
+    .ant-form-item.ant-form-item-with-help {
+      margin-bottom: 3px;
+    }
+  }
+}
+
+

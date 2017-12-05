@@ -1,0 +1,57 @@
+@import "../../../assets/style/index";
+
+@rowGap: 30px;
+@rowML: 20px;
+@contentM: 4.1666666%;
+@labelW: 114px;
+
+.wrapper {
+  height: 100%;
+  margin: auto;
+
+  & > div {
+    height: 100%;
+    margin: @gap @contentM;
+    background: #fff;
+  }
+
+  :global .row {
+    text-align: center;
+    & > div {
+      display: inline-block;
+      min-width: 300px;
+      margin: @headerHeight @headerHeight;
+    }
+  }
+  .bottom {
+    text-align: center;
+
+    & > div {
+      display: inline-block;
+      min-height: 200px;
+      border-radius: 4px;
+      border: 1px solid #d9d9d9;
+      width:1066px;
+
+      :global .ant-tabs-tab{
+        width: 150px;
+      }
+      :global .ant-tabs-content {
+        text-align: left;
+      }
+    }
+  }
+
+  :global .ant-calendar-picker {
+    width: 100%;
+  }
+
+}
+
+:global .ant-calendar {
+  width: 300px;
+}
+
+
+
+

@@ -1,0 +1,95 @@
+@import "../../../assets/style/index";
+
+@menuHeight: 56px;
+@contentM: 4.1666666%;
+
+.wrapper {
+  height: 100%;
+
+  & > div {
+    height: 100%;
+  }
+
+  :global {
+    .assistant {
+      .ant-popover-inner {
+        min-width: 56px;
+      }
+      .ant-popover-inner-content {
+        font-size: @fontSizeXs;
+        padding: 2px;
+      }
+    }
+
+    .anticon-arrow-down, .anticon-arrow-up {
+      transform: rotate(45deg);
+      margin-right: 10px;
+      font-size: 16px;
+    }
+  }
+
+}
+
+.top {
+  padding: 20px 0;
+  text-align: right;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  top: @menuHeight;
+  bottom: 0;
+  overflow-y: auto;
+
+  & > div {
+    margin: 18px @contentM;
+  }
+}
+
+.panelHead {
+  composes: panel-head;
+
+  padding: 28px 36px;
+  background: #fbfbfb;
+  height: auto;
+}
+
+.panelBody {
+  composes: panel-body;
+  padding: 36px 46px @gap;
+}
+
+.search {
+  :global {
+    .ant-form-item {
+      margin: 8px 2% 8px 0;
+
+      .ant-calendar-range-picker.ant-input {
+        width: auto;
+      }
+
+    }
+
+    .ant-btn {
+      border-radius: 4px;
+    }
+
+    .ant-input,
+    .ant-select {
+      width: 240px;
+    }
+  }
+}
+
+:global {
+  .ant-calendar-range {
+    .ant-calendar-ok-btn {
+      height: auto;
+    }
+    .ant-calendar-date-input-wrap .ant-calendar-input {
+      padding-right: 2px;
+    }
+  }
+}
+
